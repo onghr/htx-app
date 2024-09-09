@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    command: npm start
+    ports:
+      - "8000:3000"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /src
+  redis:
+    image: "redis:alpine"
