@@ -5,39 +5,51 @@ export const audioSlice = createSlice({
     initialState: {
         value: [
             {
-                title: "ABC",
-                description: "ABC song",
-                category: "Others",
-                uploadDate: "2022-12-15",
-                fileSize: "1.2MB"
-              },
-              {
-                title: "DEF",
-                description: "DEF song",
-                category: "Others",
-                uploadDate: "2023-12-23",
-                fileSize: "1.2MB"
-              },
-              {
-                title: "GHI",
-                description: "GHI song",
-                category: "Others",
-                uploadDate: "2024-02-15",
-                fileSize: "1.2MB"
-              },
-              {
-                title: "JKL",
-                description: "JKL song",
-                category: "Others",
-                uploadDate: "2024-05-15",
-                fileSize: "1.2MB"
-              }
+              id: 0,
+              title: "ABC",
+              description: "ABC song",
+              category: "Voice Recording, Others",
+              uploadDate: "2022-12-15",
+              fileSize: "1.2MB",
+              delete: false
+            },
+            {
+              id: 1,
+              title: "DEF",
+              description: "DEF song",
+              category: "Others",
+              uploadDate: "2023-12-23",
+              fileSize: "1.2MB",
+              delete: false
+            },
+            {
+              id: 2,
+              title: "GHI",
+              description: "GHI song",
+              category: "Others",
+              uploadDate: "2024-02-15",
+              fileSize: "1.2MB",
+              delete: false
+            },
+            {
+              id: 3,
+              title: "JKL",
+              description: "JKL song",
+              category: "Others",
+              uploadDate: "2024-05-15",
+              fileSize: "1.2MB",
+              delete: false
+            }
         ],
     },
     reducers: {
-        add: function (state, action) {
+        add: (state, action) => {
             state.value.push(action.payload.newAudioData);
         },
+        deleteAudio: (state, action) => {
+          const index = action.payload.index;
+          state.value[index].deleted = action.payload.audioDelete;
+        }
         /* update: function (state, action) {
             const index = action.payload.index;
             const newTitle = action.payload.newTitle;
@@ -56,7 +68,7 @@ export const audioSlice = createSlice({
 });
 
 // Use these to update the state in your component
-export const { add } = audioSlice.actions;
+export const { add, deleteAudio } = audioSlice.actions;
 
 // This part goes into the store.
 export default audioSlice.reducer;

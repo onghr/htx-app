@@ -8,7 +8,7 @@ export default function AudioList(props) {
         <div className="row">
           <div className="col"><h1 className="h3 mb-3"><strong>Audio List</strong></h1></div>
           <div className="col-auto mb-2">
-            <Link data-id="add-audio" className="btn btn-primary btn-lg" to={"/upload"}><i className="bi bi-upload"></i> Upload Audio</Link>
+            <Link data-id="add-audio" className="btn btn-primary btn-lg" to={"upload"}><i className="bi bi-upload"></i> Upload Audio</Link>
           </div>
         </div>
 
@@ -23,9 +23,9 @@ export default function AudioList(props) {
                         <th>File Name</th>
                         <th>Description</th>
                         <th width="180">Category</th>
-                        <th className="d-none d-xl-table-cell">Date Uploaded</th>
-                        <th className="d-none d-xl-table-cell">Size</th>
-                        <th className="audio-delete">&nbsp;</th>
+                        <th width="180" className="d-none d-xl-table-cell">Date Uploaded</th>
+                        <th width="100" className="d-none d-xl-table-cell">Size</th>
+                        <th width="180" className="audio-delete"></th>
                       </tr>
                     </thead>
                     <tbody>
