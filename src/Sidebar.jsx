@@ -17,7 +17,7 @@ export default function Sidebar() {
                     <li className="sidebar-item">
                         <NavLink
                             className={({ isActive }) => (isActive ? "active " : "") + "sidebar-link"}
-                            to={"/edit-profile"}
+                            to={"edit-profile"}
                         >
                             Edit Profile
                         </NavLink>
@@ -29,9 +29,6 @@ export default function Sidebar() {
                         >
                             Logout
                         </NavLink>
-                        {/* <Link className="sidebar-link" to={"/"}>
-                            Logout
-                        </Link> */}
                     </li>
                 </ul>
             </div>

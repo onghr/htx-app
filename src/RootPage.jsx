@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function RootPage(props) {
   return (
@@ -30,7 +30,7 @@ export default function RootPage(props) {
                           </div>
                           <div className="d-grid gap-2 mt-3">
 
-                            <NavLink to={"/dashboard"} className={"btn btn-lg btn-primary"}>Sign in</NavLink>
+                            <Link to={"/dashboard"} className={"btn btn-lg btn-primary"}>Sign in</Link>
                           </div>
                         </form>
                       </div>

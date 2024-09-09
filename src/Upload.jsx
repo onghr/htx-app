@@ -1,5 +1,3 @@
-import Footer from './Footer';
-// import { Link } from 'react-router-dom';
 const fileChangedHandler = (event) => {
   let fileSize = (parseInt(event.target.files[0].size) / 1000 / 1000).toFixed(2);
   document.getElementById('audioFileSize').value = fileSize;
@@ -97,7 +95,6 @@ export default function Upload(props) {
           </div>
         </>
       </main>
-      <Footer />
     </div>
   );
 }

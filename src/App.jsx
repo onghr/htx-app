@@ -2,7 +2,6 @@ import {createHashRouter, RouterProvider} from "react-router-dom";
 // import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import RootPage from './RootPage';
-import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
 import AudioList from './AudioList';
 import Upload from './Upload';
