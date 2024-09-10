@@ -1,8 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import React from 'react';
 import AudioData from "./AudioData";
+import DeleteAudio from './DeleteAudio';
+
+
 
 export default function AudioList(props) {
+    const audios = useSelector((store) => {
+      return store.audio.value;
+    });
+    const [audiolist, setAudiolist] = React.useState(audios);
     return (
       <div className="container-fluid p-0 content-display" id="audio-main">
         <div className="row">
@@ -25,7 +33,7 @@ export default function AudioList(props) {
                         <th width="180">Category</th>
                         <th width="180" className="d-none d-xl-table-cell">Date Uploaded</th>
                         <th width="100" className="d-none d-xl-table-cell">Size</th>
-                        <th width="180" className="audio-delete"></th>
+                        <th width="180" className="audio-delete">Delete?</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -35,6 +43,15 @@ export default function AudioList(props) {
                 </div>
               </div>
             </div>
+
+            <DeleteAudio selectedAudios={function(deleteAudios) {
+              for(let da = 0; deleteAudios.length > da; da++) {
+                console.log(audiolist[3].deleted);
+                console.log(deleteAudios);
+                audiolist[deleteAudios[da]].deleted = true; // get audio index
+                setAudiolist([...audiolist]);
+              }
+            }} />
           </div>
         </div>
       </div>

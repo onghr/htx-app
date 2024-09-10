@@ -17,3 +17,7 @@ code {
   flex-wrap: wrap;
   gap: 4px;
 }
+
+#audioDataTbl tr:hover audio::-webkit-media-controls-panel {
+  background: #fff;
+}

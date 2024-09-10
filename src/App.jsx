@@ -35,14 +35,6 @@ const router = createHashRouter([
 export default function App(props) {
   return (
     <div className="wrapper">
-    {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RootPage />} />
-          <Route path="/dashboard" element={<><Sidebar /><Dashboard /></>} />
-          <Route path="/upload" element={<><Sidebar /><Upload /></>} />
-          <Route path="/edit-profile" element={<><Sidebar /><EditProfile /></>} />
-        </Routes>
-      </BrowserRouter> */}
       <RouterProvider router={router} />
     </div>
   );
